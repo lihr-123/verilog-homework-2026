@@ -6,7 +6,7 @@ module test16;
 	wire cout;
 	wire[9:0] q;
 	wire[7:0] led;
-	wire led0,led2,led3,led4,led5,led6,led7;
+	wire led0, led1,led2,led3,led4,led5,led6,led7;
 	assign led[0]=q[0];
 	assign led[1]=q[1];
 	assign led[2]=q[2];
@@ -15,7 +15,7 @@ module test16;
 	assign led[5]=q[5];
 	assign led[6]=q[6];
 	assign led[7]=q[7];
-
+	assign led={led7,led6,led5,led4,led3,led2,led1,led0};
 	CD4017 u_cd4017(clk,reset,inhibit,cout,q); 
 	initial
 	begin
